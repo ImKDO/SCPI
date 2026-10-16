@@ -324,17 +324,3 @@ uv run python Lab2/params.py
 6. На своём видео (кошелёк — объект почти без текстуры) рамка есть на всех кадрах, но детекция срабатывает лишь на 5% кадров. Поэтому на крупных планах и в конце рамка уплывает. Для трекинга по ключевым точкам объект должен быть текстурным.
 7. Критичные параметры — `min_inliers` (меньше 8 — ложные детекции) и наличие удержания `max_hold ≥ 1` (без него рамка пропадает на смазе). Остальные (`ratio` 0.7–0.8, `ransac_thresh` 1–3 px, `max_points` ≥ 100) в разумных пределах на результат влияют слабо.
 8. Чтобы точнее вести далёкий объект, можно детектировать на нескольких масштабах шаблона, уточнять гомографию прямым методом (ECC) или сглаживать рамку фильтром Калмана.
-
-## 5. Использованные источники
-
-1. Lowe D. G. Distinctive Image Features from Scale-Invariant Keypoints // International Journal of Computer Vision. — 2004. — Vol. 60, № 2. — P. 91–110.
-2. Rublee E., Rabaud V., Konolige K., Bradski G. ORB: an efficient alternative to SIFT or SURF // ICCV. — 2011. — P. 2564–2571.
-3. Muja M., Lowe D. G. Fast Approximate Nearest Neighbors with Automatic Algorithm Configuration // VISAPP. — 2009.
-4. Hartley R., Zisserman A. Multiple View Geometry in Computer Vision. 2nd ed. — Cambridge University Press, 2004.
-5. Fischler M. A., Bolles R. C. Random Sample Consensus: A Paradigm for Model Fitting with Applications to Image Analysis and Automated Cartography // Communications of the ACM. — 1981. — Vol. 24, № 6. — P. 381–395.
-6. Lucas B. D., Kanade T. An Iterative Image Registration Technique with an Application to Stereo Vision // IJCAI. — 1981. — P. 674–679.
-7. Bouguet J.-Y. Pyramidal Implementation of the Lucas Kanade Feature Tracker. — Intel Corporation, 2000.
-8. Shi J., Tomasi C. Good Features to Track // CVPR. — 1994. — P. 593–600.
-9. Kalal Z., Mikolajczyk K., Matas J. Forward-Backward Error: Automatic Detection of Tracking Failures // ICPR. — 2010. — P. 2756–2759.
-10. OpenCV: Feature Matching + Homography to find Objects. — https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html
-11. OpenCV: Optical Flow. — https://docs.opencv.org/4.x/d4/dee/tutorial_optical_flow.html
