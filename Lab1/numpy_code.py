@@ -2,7 +2,7 @@ import numpy as np
 
 
 def get_gauss_kernel(size):
-  sigma = 0.3 * ((size - 1) * 0.5 - 1) + 0.8  # та же формула, что в OpenCV
+  sigma = 0.3 * ((size - 1) * 0.5 - 1) + 0.8
   ax = np.arange(size) - size // 2
   gauss = np.exp(-0.5 * np.square(ax) / np.square(sigma))
   kernel = np.outer(gauss, gauss)
